@@ -24,14 +24,23 @@
 <h1>Hello Test</h1>
 
 
-	<button id='b1' onclick="clevertap.event.push("button clicked");">Click</button>
+	<button id='b1' onclick="func()">Click</button>
 
-</body>
 
 
 <script type="text/javascript">
+	function func(){
+
+		print("clicked");
+		clevertap.event.push("Product Viewed");
+
+	}
+
 	
-	print("test");
 
 </script>
+</body>
+
+
+
 </html>
