@@ -54,7 +54,11 @@
 	function func(){
 
 		console.log("clicked");
-		clevertap.event.push("Charged");
+		clevertap.event.push("Charged", {
+  "Product name":"Watch",
+  "Category":"Accessories",
+  "Amount":10.00,
+});
 
 	}
 
