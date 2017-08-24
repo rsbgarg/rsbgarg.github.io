@@ -24,7 +24,10 @@
 <h1>Hello Test</h1>
 
 
-	<button id='b1' onclick="func()">Click</button>
+	<button id='b1' onclick="uploadProfiles()">Click</button>
+	<button id='b2' onclick="pushEvent()">EVENT</button>
+	<button id='b3' onclick="setTimeout(pushEvent, 10000)">after 10 sec delay</button>
+	<button id='b4' onclick="setTimeout(pushEvent, 500000)">after 3 min delay</button>
 <div>
 	
 	<form action="/purchase" method="POST">
@@ -48,17 +51,38 @@
 </div>
 
 
+	<script type="text/javascript">
+	function uploadProfiles(){
+
+		console.log("uploading profiles");
+		var i;
+		for(i = 1000; i < 1020; i++){
+			clevertap.profile.push({
+				"Site":{
+					"userID":i; 
+		
+				}
+			});
+		}
+		
+
+	}
+
+	
+
+</script>
 
 
 <script type="text/javascript">
-	function func(){
+	function pushEvent(){
 
 		console.log("clicked");
 		clevertap.event.push("Charged", {
-  "Product name":"Watch",
-  "Category":"Accessories",
-  "Amount":10.00,
-});
+		  "Charged ID":"j1565iib",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":10.00,
+		});
 
 	}
 
