@@ -79,7 +79,6 @@
 <script type="text/javascript">
 	function pushEvent(){
 
-		
 		clevertap.event.push("Charged", {
 		  "Charged ID":"charge1",
 		  "Product name":"Watch",
@@ -89,6 +88,7 @@
 		console.log("charged");
 
 	}
+	
 	function pushEventInLoop(){
 
 		
@@ -101,6 +101,7 @@
 		console.log("charged");
 
 	}
+	
 	function recurEvent(){
 		var i;
 		for(i=0;i<10;i++){
@@ -108,6 +109,7 @@
 		}
 		
 	}
+	
 	function meh(){
 	
 		clevertap.event.push("Charged", {
@@ -117,9 +119,6 @@
 		  "Amount":50.00,
 		});
 		console.log("charg 2");
-		
-		
-	
 	}
 	function pushMultiple(){
 		clevertap.event.push("Charged", {
