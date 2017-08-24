@@ -81,7 +81,19 @@
 
 		
 		clevertap.event.push("Charged", {
-		  "Charged ID":"ch6",
+		  "Charged ID":"charge1",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":10.00,
+		});
+		console.log("charged");
+
+	}
+	function pushEventInLoop(){
+
+		
+		clevertap.event.push("Charged", {
+		  "Charged ID":"loopCharge",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":10.00,
@@ -92,27 +104,26 @@
 	function recurEvent(){
 		var i;
 		for(i=0;i<10;i++){
-			var pr = function(){console.log(" in loop " + i);}
-			setTimeout(pushEvent(), 10000);
-			
+			setTimeout(pushEventInLoop(),i*10000);
 		}
 		
 	}
 	function meh(){
 	
 		clevertap.event.push("Charged", {
-		  "Charged ID":"ch5",
+		  "Charged ID":"charge3mindelay",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":50.00,
 		});
 		console.log("charg 2");
 		
+		
 	
 	}
 	function pushMultiple(){
 		clevertap.event.push("Charged", {
-		  "Charged ID":"ch5",
+		  "Charged ID":"charge3mindelay",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":10.00,
