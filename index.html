@@ -78,7 +78,7 @@
 <script type="text/javascript">
 	function pushEvent(){
 
-		console.log("clicked");
+		
 		clevertap.event.push("Charged", {
 		  "Charged ID":"j1565iib",
 		  "Product name":"Watch",
@@ -93,6 +93,26 @@
 			setTimeout(pushEvent, 30000);
 		}
 		
+	}
+	function pushMultiple(){
+
+		
+
+		clevertap.event.push("Charged", {
+		  "Charged ID":"ch1",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":10.00,
+		});
+		setTimeout(console.log("charged"), 30000);
+		clevertap.event.push("Charged", {
+		  "Charged ID":"ch1",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":12.00,
+		});
+		
+
 	}
 
 	
