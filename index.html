@@ -100,19 +100,19 @@
 		
 
 		clevertap.event.push("Charged", {
-		  "Charged ID":"ch2",
+		  "Charged ID":"ch3",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":10.00,
 		});
 		console.log("1");
-		setTimeout(console.log("charged"), 30000);
-		clevertap.event.push("Charged", {
-		  "Charged ID":"ch2",
+		setTimeout(clevertap.event.push("Charged", {
+		  "Charged ID":"ch4",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":12.00,
-		});
+		}), 500000);
+		
 				console.log("2");
 		
 
