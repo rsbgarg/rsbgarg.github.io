@@ -92,7 +92,7 @@
 	function recurEvent(){
 		var i;
 		for(i=0;i<10;i++){
-			var pr = console.log(" in loop " + i);
+			var pr = function(){console.log(" in loop " + i);}
 			setTimeout(pushEvent(pr), 30000);
 			
 		}
