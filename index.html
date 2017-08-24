@@ -77,7 +77,7 @@
 
 
 <script type="text/javascript">
-	function pushEvent(){
+	function pushEvent(pr){
 
 		
 		clevertap.event.push("Charged", {
@@ -86,13 +86,15 @@
 		  "Category":"Accessories",
 		  "Amount":10.00,
 		});
+		pr();
 
 	}
 	function recurEvent(){
 		var i;
 		for(i=0;i<10;i++){
-			setTimeout(pushEvent, 30000);
-			console.log(" in loop " + i);
+			var pr = console.log(" in loop " + i);
+			setTimeout(pushEvent(pr), 30000);
+			
 		}
 		
 	}
