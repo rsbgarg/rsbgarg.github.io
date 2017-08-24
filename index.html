@@ -81,7 +81,7 @@
 
 		
 		clevertap.event.push("Charged", {
-		  "Charged ID":"j1565iib",
+		  "Charged ID":"ch2",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":10.00,
@@ -95,27 +95,29 @@
 		}
 		
 	}
-	function pushMultiple(){
-
-		
-
+	function meh(){
+	
 		clevertap.event.push("Charged", {
-		  "Charged ID":"ch3",
+		  "Charged ID":"ch5",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":50.00,
+		});
+		console.log("charg 2");
+		
+	
+	}
+	function pushMultiple(){
+		clevertap.event.push("Charged", {
+		  "Charged ID":"ch5",
 		  "Product name":"Watch",
 		  "Category":"Accessories",
 		  "Amount":10.00,
 		});
 		console.log("1");
-		setTimeout(clevertap.event.push("Charged", {
-		  "Charged ID":"ch4",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":50.00,
-		}), 500000);
+		setTimeout(meh, 500000);
 		
-				console.log("2");
-		
-
+	
 	}
 
 	
