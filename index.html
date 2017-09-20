@@ -7,7 +7,7 @@
 <script type="text/javascript">
      var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[]};
  // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
- clevertap.account.push({"id": "6Z4-6ZZ-5W5Z"});
+ clevertap.account.push({"id": "7Z4-6ZZ-5W5Z"});
  (function () {
 		 var wzrk = document.createElement('script');
 		 wzrk.type = 'text/javascript';
@@ -30,6 +30,7 @@
 	<button id='b4' onclick="setTimeout(pushEvent, 500000)">after 3 min delay</button>
 	<button id='b5' onclick="recurEvent()">Recur Event</button>
 	<button id='b6' onclick="pushMultiple()">Push Multiple</button>
+	<button id='b7' onclick="getEmail()">Get Email</button>
 	
 <div>
 	
@@ -132,6 +133,17 @@
 		
 	
 	}
+	function getEmail(){
+		clevertap.event.push("EMAIL ME", {
+		  "Charged ID":"charge3mindelay",
+		  "Product name":"Watch",
+		  "Category":"Accessories",
+		  "Amount":10.00,
+		});
+			
+		
+	}
+	
 
 	
 
