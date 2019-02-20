@@ -94,8 +94,7 @@
 
 <script>
 	
-	$(document).ready(function(){
-		$("#submitFormBtn").on("click",function(){
+	$("#submitFormBtn").on("click",function(){
 			var token = document.getElementById("exampleInputPassword1").value;
 			var name = document.getElementById("exampleInputName1").value;
 		        var email = document.getElementById("exampleInputEmail1").value;
@@ -126,8 +125,6 @@
 			xmlhttp.send(JSON.parse(params));
 			
 		});	
-		
-	});
 	
 
 </script>
