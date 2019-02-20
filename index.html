@@ -45,133 +45,58 @@
 
 </head>
 <body>
-<h1>Hello Test</h1>
-
-
-	<button id='b1' onclick="uploadProfiles()">Click</button>
-	<button id='b2' onclick="pushEvent()">EVENT</button>
-	<button id='b3' onclick="setTimeout(pushEvent, 10000)">after 10 sec delay</button>
-	<button id='b4' onclick="setTimeout(pushEvent, 500000)">after 3 min delay</button>
-	<button id='b5' onclick="recurEvent()">Recur Event</button>
-	<button id='b6' onclick="pushMultiple()">Push Multiple</button>
-	<button id='b7' onclick="getEmail()">Get Email</button>
-	
-<div>
-	
-	<form action="/purchase" method="POST">
-<!-- Note that the amount is in paise = 50 INR -->
-<script
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    data-key="rzp_live_ILgsfZCZoFIKMb"
-    data-amount="100"
-    data-buttontext="Pay with Razorpay"
-    data-name="Merchant Name"
-    data-description="Purchase Description"
-    data-image="https://your-awesome-site.com/your_logo.jpg"
-    data-prefill.name="Harshil Mathur"
-    data-prefill.email="support@razorpay.com"
-    data-theme.color="#F37254"
-></script>
-<input type="hidden" value="Hidden Element" name="hidden">
-</form>
-
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron card card-block">
+				<h2>
+					Hello, world!
+				</h2>
+				<p>
+					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" href="#">Learn more</a>
+				</p>
+			</div>
+			<form role="form" class="form-inline">
+				<div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Email address
+					</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+						Password
+					</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputFile">
+						File input
+					</label>
+					<input type="file" class="form-control-file" id="exampleInputFile" />
+					<p class="help-block">
+						Example block-level help text here.
+					</p>
+				</div>
+				<div class="checkbox">
+					 
+					<label>
+						<input type="checkbox" /> Check me out
+					</label>
+				</div> 
+				<button type="submit" class="btn btn-primary">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
 </div>
-
-
-	<script type="text/javascript">
-	function uploadProfiles(){
-
-		console.log("uploading profiles");
-		var i;
-		for(i = 1000; i < 1020; i++){
-			clevertap.profile.push({
-				"Site":{
-					"userID":i
-		
-				}
-			});
-		}
-		
-
-	}
-
-	
-
-</script>
-
-
-<script type="text/javascript">
-	function pushEvent(){
-
-		clevertap.event.push("Charged", {
-		  "Charged ID":"charge1",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":10.00,
-		});
-		console.log("charged");
-
-	}
-	
-	function pushEventInLoop(){
-
-		
-		clevertap.event.push("Charged", {
-		  "Charged ID":"loopCharge",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":10.00,
-		});
-		console.log("charged");
-
-	}
-	
-	function recurEvent(){
-		var i;
-		for(i=0;i<10;i++){
-			setTimeout(pushEventInLoop(),i*10000);
-		}
-		
-	}
-	
-	function meh(){
-	
-		clevertap.event.push("Charged", {
-		  "Charged ID":"charge3mindelay",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":50.00,
-		});
-		console.log("charg 2");
-	}
-	function pushMultiple(){
-		clevertap.event.push("Charged", {
-		  "Charged ID":"charge3mindelay",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":10.00,
-		});
-		console.log("1");
-		setTimeout(meh, 500000);
-		
-	
-	}
-	function getEmail(){
-		clevertap.event.push("EMAIL ME", {
-		  "Charged ID":"charge3mindelay",
-		  "Product name":"Watch",
-		  "Category":"Accessories",
-		  "Amount":10.00,
-		});
-			
-		
-	}
-	
-
-	
-
-</script>
 </body>
 
 
