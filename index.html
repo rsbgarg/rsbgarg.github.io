@@ -84,13 +84,55 @@
 				
 				
 				
-				<button type="submit" class="btn btn-primary">
+				<button type="submit" class="btn btn-primary" id="submitFormBtn">
 					Submit
 				</button>
 			</form>
 		</div>
 	</div>
 </div>
+
+<script>
+	
+	$(document).ready(function(){
+		$("#submitFormBtn").on("click",function(){
+			var token = document.getElementById("exampleInputPassword1").value;
+			var name = document.getElementById("exampleInputName1").value;
+		        var email = document.getElementById("exampleInputEmail1").value;
+			
+			xmlhttp = new XMLHttpRequest();
+			
+
+			var url = "https://334-FDS-156.mktorest.com/rest/v1/leads.json?access_token=" +token ;
+			xmlhttp.open("POST", url, true);
+			xmlhttp.setRequestHeader("Content-type", "application/json");
+					var params = {  
+			   "action":"createOnly",
+			   "lookupField":"email",
+			   "input":[  
+			      {  
+				 "email": email",
+				 "firstName": name,
+				 "postalCode":"400064"
+			      }
+			   ]
+			}
+
+			xmlhttp.onreadystatechange = function () { //Call a function when the state changes.
+			    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				alert(xmlhttp.responseText);
+			    }
+			}
+			xmlhttp.send(JSON.parse(params));
+			
+			
+		
+	});
+	
+
+</script>
+
+
 </body>
 
 
