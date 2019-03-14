@@ -77,9 +77,16 @@
 				<div class="form-group">
 					 
 					<label for="exampleInputName1">
-						Name
+						First Name
 					</label>
 					<input type="name" class="form-control" id="exampleInputName1" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputName2">
+						Last Name
+					</label>
+					<input type="name" class="form-control" id="exampleInputName2" />
 				</div>
 				
 				
@@ -96,33 +103,19 @@
 	
 	$("#submitFormBtn").on("click",function(){
 			var token = document.getElementById("exampleInputPassword1").value;
-			var name = document.getElementById("exampleInputName1").value;
+			var firstname = document.getElementById("exampleInputName1").value;
+			var lastname = document.getElementById("exampleInputName2").value;
 		        var email = document.getElementById("exampleInputEmail1").value;
 			
-			xmlhttp = new XMLHttpRequest();
+		
+			Munchkin.munchkinFunction('associateLead', {
+        		'Email': email,
+        		'FirstName': firstname,
+        		'LastName': lastname
+    			},
+    			token
+			);
 			
-
-			var url = "https://334-FDS-156.mktorest.com/rest/v1/leads.json?access_token=" +token ;
-			xmlhttp.open("POST", url, true);
-			xmlhttp.setRequestHeader("Content-type", "application/json");
-					var params = {  
-			   "action":"createOnly",
-			   "lookupField":"email",
-			   "input":[  
-			      {  
-				 "email": email,
-				 "firstName": name,
-				 "postalCode":"400064"
-			      }
-			   ]
-			}
-
-			xmlhttp.onreadystatechange = function () { //Call a function when the state changes.
-			    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-				alert(xmlhttp.responseText);
-			    }
-			}
-			xmlhttp.send(JSON.stringify(params));
 			
 		});	
 	
